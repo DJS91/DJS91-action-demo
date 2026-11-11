@@ -12,7 +12,7 @@ Use the published action in a workflow:
 steps:
   - name: Generate a random number
     id: random
-    uses: DJS91/DJS91-action-demo@v1
+    uses: DJS91/DJS91-action-demo@v1.0.0
     with:
       user-name: Developer
 
