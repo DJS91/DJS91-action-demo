@@ -1,0 +1,35 @@
+name: Random Number Generator Demo
+description: Greets a user and returns a pseudo-random number
+author: DJS91
+
+inputs:
+  user-name:
+    description: Name to use in the greeting
+    required: false
+    default: Developer
+
+outputs:
+  generated-number:
+    description: The generated pseudo-random integer
+    value: ${{ steps.generate.outputs.random-number }}
+
+runs:
+  using: composite
+  steps:
+    - name: Greet user
+      shell: bash
+      env:
+        USER_NAME: ${{ inputs.user-name }}
+      run: echo "Hello, $USER_NAME!"
+
+    - name: Generate random number
+      id: generate
+      shell: bash
+      run: |
+        RANDOM_NUMBER=$RANDOM
+        echo "Generated number: $RANDOM_NUMBER"
+        echo "random-number=$RANDOM_NUMBER" >> "$GITHUB_OUTPUT"
+
+branding:
+  icon: hash
+  color: blue
