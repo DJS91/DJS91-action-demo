@@ -6,7 +6,7 @@ an input and return an output.
 
 ## Use the action
 
-After this action has been published and tagged, use it in a workflow:
+Use the published action in a workflow:
 
 ```yaml
 steps:
@@ -33,8 +33,8 @@ The workflow in `.github/workflows/test-random-generator-action.yml` runs the
 action and checks that its output contains only digits. It runs on pushes,
 pull requests, and manual dispatch.
 
-## Marketplace status
+## Marketplace
 
-This repository is a demo project. The action is not published to GitHub
-Marketplace until the repository is public and the action is submitted through
-GitHub's Marketplace publishing flow.
+This demo action is published to GitHub Marketplace as
+[Random Number Generator Demo](https://github.com/marketplace/actions/random-number-generator-demo).
+Version `v1.0.0` is the initial release.
